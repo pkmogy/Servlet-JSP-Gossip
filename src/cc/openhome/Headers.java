@@ -23,7 +23,7 @@ public class Headers extends HttpServlet {
         out.println("<title>Servlet ShowHeader</title>");
         out.println("</head>");
         out.println("<body>");
-
+        //將標頭存成list,使用foreach讀出來
         Collections.list(request.getHeaderNames())
                 .forEach(name -> {
                     out.printf("%s: %s<br>%n", name, request.getHeader(name));
