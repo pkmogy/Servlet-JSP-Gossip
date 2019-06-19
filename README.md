@@ -154,6 +154,9 @@ write()
 設定編碼
 setCharacterEncoding("UTF-8");
 
+設定內容型態
+setContentType("text/html; charset=UTF-8");
+
 設定狀態碼
 setStatus
 
@@ -174,6 +177,12 @@ sendRedirect(url)
 
 回應404
 sendError(HttpServletResponse.SC_NOT_FOUND, "自定義內容");
+
+設定地區
+setLocale(new Locale("zh", "TW"));
+
+將陣列轉至List
+asList(array);
 ```
 
 ### 增強式for迴圈
@@ -191,4 +200,19 @@ Collections.list(request.getParameterNames()) //將資料名稱加入list
                     out.printf("%s: %s<br>%n", name, request.getHeader(name));
                 });           
 
+```
+###  建立驗證碼
+```
+轉換值的型態，範例為轉乘String
+mapToObj(String::valueOf)
+
+將取到的資料組合起來
+collect(Collectors.joining())
+
+建立驗證碼圖片
+ImageIO.write(
+        passwordImage(passwd),      //設定圖片樣式
+        "JPG",                      //設定副檔名
+        response.getOutputStream()  //取得串流
+);
 ```
