@@ -153,6 +153,27 @@ write()
 
 設定編碼
 setCharacterEncoding("UTF-8");
+
+設定狀態碼
+setStatus
+
+狀態碼分別為:
+正常回應 200
+HttpServletResponse.SC_OK
+
+重新導向
+永久轉移 301
+HttpServletResponse.SC_MOVED_PERMANENTLY
+
+暫時轉移 302
+HttpServletResponse.SC_FOUND(建議使用)
+HttpServletResponse.SC_MOVED_TEMPORARILY
+
+重新請求URL
+sendRedirect(url)
+
+回應404
+sendError(HttpServletResponse.SC_NOT_FOUND, "自定義內容");
 ```
 
 ### 增強式for迴圈
