@@ -14,8 +14,8 @@ compile     編輯
 Stream      流
 ```
 
-#方法
-###正規表示法
+# 方法
+### 正規表示法
 ```
 設置條件
 Pattern pattern=Pattern.compile("filename=\"(.*)\"");
@@ -32,7 +32,7 @@ matcher.group(1);
 取得位置索引
 matcher.start(1);
 ```
-###網站資訊
+### 網站資訊
 ```
 取得整個路徑
 request.getRequestURI()
@@ -61,7 +61,7 @@ getHeader()
 取得所有標頭名稱
 getHeaderNames()
 ```
-###抓取資料
+### 抓取資料
 ```
 取得串流
 getInputStream()
@@ -69,7 +69,7 @@ getInputStream()
 取得檔案類型
 getContentType()
 ```
-###字串
+### 字串
 ```
 抓取字串
 substring(初始位置,結束位置)
@@ -80,7 +80,7 @@ lastIndexOf('=')
 取得字串索引位置
 indexOf(查詢字串,查詢起始位置)
 ```
-###Map
+### Map
 ```
 宣告map變數
 private Map<String, String> messages
@@ -94,7 +94,7 @@ messages.put(變數, 值);
 取得值
 messages.get(變數)
 ```
-###上傳資料
+### 上傳資料
 ```
 取得檔案
 getPart("input name")
@@ -108,7 +108,7 @@ getParts()
 過濾器
 filter()
 ```
-###其他
+### 其他
 ```
 取得緩衝區(BufferedReader)
 getReader()
@@ -141,7 +141,7 @@ getWriter()
 setCharacterEncoding("UTF-8");
 ```
 
-###增強式for迴圈
+### 增強式for迴圈
 ```
 第一種
 Collections.list(request.getParameterNames()) //將資料名稱加入list
