@@ -215,4 +215,18 @@ ImageIO.write(
         "JPG",                      //設定副檔名
         response.getOutputStream()  //取得串流
 );
+
+ private BufferedImage passwordImage(String password) throws IOException{
+        //建立圖片緩存
+        BufferedImage bufferedImage=new BufferedImage(60,20,BufferedImage.TYPE_INT_RGB);
+        //建立畫布
+        Graphics g=bufferedImage.getGraphics();
+        //設定顏色
+        g.setColor(Color.WHITE);
+        //設定字型樣式
+        g.setFont(new Font("標楷體",Font.BOLD,16));
+        //寫入(畫)字串
+        g.drawString(password,10,15);
+        return bufferedImage;
+ }
 ```
