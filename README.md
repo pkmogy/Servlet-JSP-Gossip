@@ -94,6 +94,20 @@ messages.put(變數, 值);
 取得值
 messages.get(變數)
 ```
+###上傳資料
+```
+取得檔案
+getPart("input name")
+
+取得檔案名稱
+getSubmittedFileName
+
+取得多個檔案
+getParts()
+
+過濾器
+filter()
+```
 ###其他
 ```
 取得緩衝區(BufferedReader)
@@ -122,6 +136,9 @@ write()
 
 對客戶端進行輸出
 getWriter()
+
+設定編碼
+setCharacterEncoding("UTF-8");
 ```
 
 ###增強式for迴圈

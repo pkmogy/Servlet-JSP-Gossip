@@ -11,11 +11,12 @@
     <title>表單上傳</title>
 </head>
 <body>
-    //action=postbody or Upload
-    <form action="postbody" method="post" enctype="multipart/form-data">
-        Username: <input type="text" name="user"><br>
-        Password: <input type="password" name="passwd"><br>
+    <!--action=postbody or Upload-->
+    <form action="upload2" method="post" enctype="multipart/form-data">
+        <!--Username: <input type="text" name="user"><br>
+        Password: <input type="password" name="passwd"><br>-->
         Select File :<input type="file" name="filename" value="" /><br>
+        Select File2 :<input type="file" name="filename2" value="" /><br>
         <input type="submit" value="上傳" name="upload"/>
     </form>
 </body>
