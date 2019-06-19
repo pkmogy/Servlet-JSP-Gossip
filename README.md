@@ -68,6 +68,13 @@ getInputStream()
 
 取得檔案類型
 getContentType()
+
+取得緩衝區(BufferedReader)
+getReader()
+
+對客戶端進行輸出
+getWriter()
+
 ```
 ### 字串
 ```
@@ -108,11 +115,21 @@ getParts()
 過濾器
 filter()
 ```
+### 調派請求
+```
+取得調派對象
+getRequestDispatcher()
+
+RequestDispatcher有兩個方法:
+
+轉發，取得調派對象訊息
+forward()
+
+包含，取得調派對象訊息也保留本身訊息
+include()
+```
 ### 其他
 ```
-取得緩衝區(BufferedReader)
-getReader()
-
 讀取資料
 reader.readLine()
 
@@ -133,9 +150,6 @@ length()
 
 寫入資料
 write()
-
-對客戶端進行輸出
-getWriter()
 
 設定編碼
 setCharacterEncoding("UTF-8");
