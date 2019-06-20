@@ -26,14 +26,14 @@ public class Questionnaire extends HttpServlet {
         if("page2".equals(page)) {    // 第二頁問卷
             String p1q1 = request.getParameter("p1q1");
             String p1q2 = request.getParameter("p1q2");
+            request.getSession().setAttribute("p1q1",p1q1);
+            request.getSession().setAttribute("p1q2",p1q2);
             out.println("問題三：<input type='text' name='p2q1'><br>");
-            out.printf("<input type='hidden' name='p1q1' value='%s'>%n", p1q1);
-            out.printf("<input type='hidden' name='p1q2' value='%s'>%n", p1q2);
             out.println("<input type='submit' name='page' value='finish'>");
         }
         else if("finish".equals(page)) {    // 最後答案收集
-            out.println(request.getParameter("p1q1") + "<br>");
-            out.println(request.getParameter("p1q2") + "<br>");
+            out.println(request.getSession().getAttribute("p1q1") + "<br>");
+            out.println(request.getSession().getAttribute("p1q2") + "<br>");
             out.println(request.getParameter("p2q1") + "<br>");
         }else{
             out.println("問題一：<input type='text' name='p1q1'><br>");

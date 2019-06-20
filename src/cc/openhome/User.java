@@ -16,6 +16,7 @@ public class User extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //取得cookie，並判斷是否為空值
+        /*
         Optional<Cookie> userCookic=Optional.ofNullable(request.getCookies())
                                             .flatMap(this::userCookie);
         if(userCookic.isPresent()){
@@ -23,6 +24,14 @@ public class User extends HttpServlet {
             request.setAttribute(cookie.getName(),cookie.getValue());
             userHtml(request,response);
         }else{
+            response.sendRedirect("login.jsp");
+        }*/
+        HttpSession session = request.getSession();
+        Optional<Object> token = Optional.ofNullable(session.getAttribute("login"));
+
+        if(token.isPresent()) {
+            userHtml(request, response);
+        } else {
             response.sendRedirect("login.jsp");
         }
     }
@@ -41,7 +50,8 @@ public class User extends HttpServlet {
         out.println("<meta charset='UTF-8'>");
         out.println("</head>");
         out.println("<body>");
-        out.println("<h1>" + request.getAttribute("user") + "已登入</h1>");
+        out.println("<h1>" + request.getSession().getAttribute("login") + "已登入</h1>");
+        out.println("<a href='logout'>登出</a>");
         out.println("</body>");
         out.println("</html>");
     }

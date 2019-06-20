@@ -261,3 +261,14 @@ Optional<Cookie> userCookic=Optional.ofNullable(request.getCookies())   //取得
                  .findFirst();                                                                              //取得串流的第一個項目
      }
 ```
+### Session
+```
+建立Session
+getSession().setAttribute("name", value); 
+
+取得Session
+getSession().getAttribute("name", value); 
+
+清除Session
+getSession().invalidate();
+```
