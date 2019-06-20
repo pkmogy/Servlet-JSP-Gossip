@@ -192,6 +192,12 @@ setAttribute(name,value);
 
 取得屬性
 getAttribute("name")
+
+生成有順序的字串，結束值為獨佔
+range(1,5) //1,2,3,4
+
+生成有順序的字串，結束值為包含
+rangeClosed(1,5) //1,2,3,4,5
 ```
 
 ### 增強式for迴圈
