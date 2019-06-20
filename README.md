@@ -183,6 +183,15 @@ setLocale(new Locale("zh", "TW"));
 
 將陣列轉至List
 asList(array);
+
+判斷值是否存在
+isPresent();
+
+設置屬性
+setAttribute(name,value);
+
+取得屬性
+getAttribute("name")
 ```
 
 ### 增強式for迴圈
@@ -229,4 +238,20 @@ ImageIO.write(
         g.drawString(password,10,15);
         return bufferedImage;
  }
+```
+### Cookie設置
+```
+Cookie cookie = new Cookie("user", "leelo"); //建立物件
+cookie.setMaxAge(7 * 24 * 60 * 60);          //設定存活時間
+response.addCookie(cookie);                  加入cookie
+```
+### Cookie取得
+```
+Optional<Cookie> userCookic=Optional.ofNullable(request.getCookies())   //取得cookie，接受空值，並轉為optional
+                                            .flatMap(this::userCookie); //將取得的所有optional合併成一個stream
+ private Optional<Cookie> userCookie(Cookie[] cookies){
+         return Stream.of(cookies)                                                                          //取得串流
+                 .filter(cookie -> "user".equals(cookie.getName()) && "leelo".equals((cookie.getValue())))  //判斷cookie
+                 .findFirst();                                                                              //取得串流的第一個項目
+     }
 ```
