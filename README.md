@@ -14,6 +14,10 @@ compile     編輯
 Stream      流
 ```
 
+#網址
+Optional方法
+>http://blog.tonycube.com/2015/10/java-java8-4-optional.html
+
 # 方法
 ### 正規表示法
 ```
@@ -198,6 +202,9 @@ range(1,5) //1,2,3,4
 
 生成有順序的字串，結束值為包含
 rangeClosed(1,5) //1,2,3,4,5
+
+如果用會關閉cookie，它會以適當的格式將jsessionid附加到URL以被識別為會話標識符。
+encodeURL()
 ```
 
 ### 增強式for迴圈
