@@ -36,6 +36,15 @@ matcher.group(1);
 取得位置索引
 matcher.start(1);
 ```
+###  Servlet內建功能
+```
+設定URL路徑(route)
+    urlPatterns = {"/login"},                                  //Servlet路徑名稱
+    initParams = {                                             //初始化路徑
+        @WebInitParam(name = "SUCCESS", value = "user"),       //設置初始化路徑
+        @WebInitParam(name = "ERROR", value = "login.html")    //設置初始化路徑
+    }
+```
 ### 網站資訊
 ```
 取得整個路徑
