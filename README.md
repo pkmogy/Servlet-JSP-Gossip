@@ -130,6 +130,15 @@ filter()
 ```
 ### 調派請求
 ```
+取得Web應用程式內容
+getServletContext()
+
+取得路徑
+getResourcePaths
+
+取得某個檔案的內容
+getResourceAsStream() 
+
 取得調派對象
 getRequestDispatcher()
 
@@ -140,6 +149,16 @@ forward()
 
 包含，取得調派對象訊息也保留本身訊息
 include()
+
+取得Web應用程式中的調派對象
+getServletContext().getRequestDispatcher("/pages/some.jsp").forward(request, response);
+
+取得Web應用程式的某個目錄中有哪些檔案
+getServletContext().getResourcePaths("/")
+                   .forEach(out::println);
+
+Web 應用程式中讀取某個檔案的內容
+getServletContext().getResourceAsStream(PDF_FILE))
 ```
 ### 其他
 ```
@@ -214,6 +233,9 @@ rangeClosed(1,5) //1,2,3,4,5
 
 如果用會關閉cookie，它會以適當的格式將jsessionid附加到URL以被識別為會話標識符。
 encodeURL()
+
+替换的字符串
+replaceFirst('被替換內容','替換內容')
 ```
 
 ### 增強式for迴圈
