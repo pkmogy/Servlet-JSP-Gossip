@@ -310,3 +310,26 @@ getSession().getAttribute("name", value);
 清除Session
 getSession().invalidate();
 ```
+### 請求事件、傾聽器
+ ```
+ 物件生成或結束時，作些相對應動作
+ ServletRequestListener
+ 方法
+ 物件初始化前
+ requestDestroyed
+ 物件結束前
+ requestInitialized
+ 
+ 物件加入屬性、移除屬性或替換屬性時
+ ServletRequestAttributeListener
+ 方法
+ 加入屬性
+ attributeAdded()
+ //移除屬性
+ attributeRemoved()
+ //替換屬性
+ attributeReplaced()
+ 
+ 
+ ```
+ 
